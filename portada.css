@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('img/retro.gif') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; /* Necesario para usar el pseudo-elemento */
+    overflow: hidden; /* Para asegurarnos de que el pseudo-elemento no desborde */
+}
+
+/* Overlay semi-transparente */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
+    z-index: 1; /* Asegura que el overlay esté encima del GIF */
+}
+
+/* Contenido encima del overlay */
+.container {
+    position: relative; /* Asegura que las tarjetas estén encima del overlay */
+    z-index: 2; /* Hace que las tarjetas aparezcan encima del overlay */
+    display: flex;
+    gap: 20px;
+}
+
+/* .container {
+    display: flex;
+    gap: 20px;
+} */
+
+.card1 {
+    background-color: #ae803c;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card2 {
+    background-color: #74b1cb;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Efecto de animación */
+@keyframes hoverAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1); 
+    }
+}
+
+.card1 {
+    background-color: #dac877; /* Cambia según corresponda */
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card2 {
+    background-color: #74b1cb; /* Cambia según corresponda */
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card1:hover, .card2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: hoverAnimation 0.5s ease-in-out;
+}
+
+footer {
+    background-color: rgba(37, 20, 147, 0.7); /* Fondo negro semi-transparente */
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    padding: 10px;
+    padding: 0px 0; /* Reduce la altura con menos padding vertical */
+    font-family: Arial, sans-serif;
+    position: fixed; /* Fijo en la parte inferior */
+    bottom: 0;
+    left: 0; /* Asegura que comience desde el borde izquierdo */
+    right: 0; /* Asegura que termine en el borde derecho */
+    width: 100%; /* Abarca el 100% del ancho */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Sombra superior */
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    margin: 5px 0;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+footer ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+footer li {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+
+header {
+    background-color: rgba(37, 20, 147, 0.7); /* Fondo similar al footer */
+    color: #ffffff; /* Texto blanco */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra inferior */
+    position: sticky; /* Fijo al hacer scroll */
+    position: fixed; /* Asegura que siempre esté en la parte superior */
+    top: 0;
+    width: 100%; /* Abarca todo el ancho de la pantalla */
+    z-index: 1000; /* Para asegurarlo encima de otros elementos */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-logo {
+    width: 200px; /* Tamaño de la imagen */
+    height: 90px;
+    object-fit: contain; /* Asegura que la imagen se ajuste */
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
